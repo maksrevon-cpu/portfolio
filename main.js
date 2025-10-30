@@ -1,25 +1,20 @@
-// анимация появления при скролле
-const observers = document.querySelectorAll('.fade-in');
+// ждём, пока всё загрузится
+document.addEventListener("DOMContentLoaded", function () {
+  const animated = document.querySelectorAll(".fade-in");
 
-const onScroll = () => {
-  const triggerBottom = window.innerHeight * 0.9;
-  observers.forEach(el => {
-    const boxTop = el.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      el.classList.add('show');
-    }
-  });
-};
+  function showOnScroll() {
+    const trigger = window.innerHeight * 0.9;
 
-window.addEventListener('scroll', onScroll);
-window.addEventListener('load', onScroll);
+    animated.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) {
+        el.classList.add("show");
+      }
+    });
+  }
 
-// мобильное меню (если захочешь)
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('.menu');
+  // показать то, что уже в зоне видимости
+  showOnScroll();
 
-if (burger && menu) {
-  burger.addEventListener('click', () => {
-    menu.classList.toggle('open');
-  });
-}
+  window.addEventListener("scroll", showOnScroll);
+});
