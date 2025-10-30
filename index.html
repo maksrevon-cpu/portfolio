@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Портфолио — сайты на Tilda</title>
+  <meta name="description" content="Делаю сайты на Tilda и верстку под ключ. Лендинги, сайты для салонов, услуг и экспертов." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #facc15;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: rgba(15, 23, 42, .75);
+      border-bottom: 1px solid rgba(148, 163, 184, .12);
+    }
+    .container {
+      width: min(1100px, 100% - 2rem);
+      margin: 0 auto;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      height: 64px;
+    }
+    .logo {
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+    .menu {
+      display: flex;
+      gap: 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .menu a:hover { color: #fff; }
+    .btn {
+      background: var(--accent);
+      color: #0f172a;
+      padding: .55rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      background: rgba(250, 204, 21, .15);
+      color: #fff;
+      border: 1px solid rgba(250, 204, 21, .2);
+      border-radius: 999px;
+      padding: .3rem .8rem;
+      font-size: .7rem;
+      margin-bottom: 1rem;
+    }
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(250, 204, 21,.12), rgba(15,23,42,0));
+      border: 1px solid rgba(148,163,184,.1);
+      border-radius: 1.4rem;
+      padding: 1.4rem 1.4rem 1.2rem;
+    }
+    .hero-card h3 { margin-top: 0; }
+    .hero-card small { color: var(--muted); }
+    .section {
+      padding: 3.5rem 0;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      background: rgba(15, 23, 42, .35);
+      border: 1px solid rgba(148, 163, 184, .12);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+    .project-thumb {
+      background: radial-gradient(circle, rgba(148,163,184,.09), rgba(15,23,42,0));
+      border: 1px solid rgba(148,163,184,.09);
+      border-radius: 1.1rem;
+      height: 155px;
+      display: grid;
+      place-items: center;
+      font-size: .8rem;
+      color: var(--muted);
+      text-align: center;
+      padding: .5rem;
+    }
+    .project-title { font-weight: 600; }
+    .project-meta {
+      display: flex;
+      gap: .25rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: rgba(148,163,184,.12);
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      font-size: .65rem;
+    }
+    .footer {
+      padding: 2.5rem 0 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .menu { display: none; }
+      header { position: sticky; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">Макс • сайты на Tilda</div>
+    <nav class="menu">
+      <a href="#works">Работы</a>
+      <a href="#services">Услуги</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn" href="https://t.me/USERNAME" target="_blank" rel="noreferrer">Написать</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero container" id="top">
+    <div>
+      <div class="badge">Свободен для заказов</div>
+      <h1>Верстаю сайты и шаблоны на Tilda для малого бизнеса</h1>
+      <p>Лендинги, сайты салонов красоты, услуг и экспертов. Быстрая сборка, адаптив, подключение домена и форм.</p>
+      <a class="btn" href="#works">Смотреть работы</a>
+    </div>
+    <div class="hero-card">
+      <h3>Последний проект</h3>
+      <p><strong>Belle Studio — сайт салона красоты</strong></p>
+      <small>Обложка, услуги, галерея, отзывы, контакты. Сделано на Tilda.</small><br>
+      <a href="https://example.tilda.ws" target="_blank" rel="noreferrer" style="color:var(--accent);font-size:.85rem;margin-top:.5rem;display:inline-block;">Открыть демо →</a>
+    </div>
+  </section>
+
+  <section class="section" id="works">
+    <div class="container">
+      <div class="section-title">
+        <span>Работы</span>
+        <a href="https://github.com/" style="color:var(--muted);font-size:.8rem;">больше на GitHub →</a>
+      </div>
+      <div class="grid">
+        <article class="project">
+          <div class="project-thumb">Belle Studio — салон красоты</div>
+          <div class="project-title">Лендинг на Tilda</div>
+          <p class="project-text">Обложка, услуги, галерея, отзывы, контакты. Готово к продаже.</p>
+          <div class="project-meta">
+            <span class="tag">Tilda</span><span class="tag">Landing</span><span class="tag">Beauty</span>
+          </div>
+          <a href="https://example.tilda.ws" target="_blank" rel="noreferrer" class="btn" style="margin-top:.5rem;align-self:flex-start;">Смотреть</a>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">Сайт для мастера по ремонту</div>
+          <div class="project-title">Лендинг услуг</div>
+          <p class="project-text">Страница под рекламу, форма заявки, блок “почему мы”.</p>
+          <div class="project-meta">
+            <span class="tag">Tilda</span><span class="tag">Услуги</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">Портфолио специалиста</div>
+          <div class="project-title">Многостраничный</div>
+          <p class="project-text">Для эксперта / коуча / репетитора. Блог + заявка.</p>
+          <div class="project-meta">
+            <span class="tag">Tilda</span><span class="tag">Portfolio</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title">Что делаю</div>
+      <div class="grid">
+        <div class="project">
+          <div class="project-title">Сайты на Tilda “под ключ”</div>
+          <p>С нуля или по референсу, с подключением домена и форм.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">Доработка существующего сайта</div>
+          <p>Добавлю блоки, сверстаю Zero, поправлю адаптив.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">Продажа готовых шаблонов</div>
+          <p>Можно быстро запустить сайт без разработки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title">Контакты</div>
+      <p>Пиши в Telegram, это быстрее всего 👇</p>
+      <a class="btn" href="https://t.me/USERNAME" target="_blank" rel="noreferrer">Написать в Telegram</a>
+      <p style="margin-top:1rem;color:var(--muted);font-size:.85rem;">Могу прислать ещё примеры и доступ к Tilda-проектам.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  © 2025. Сделано вручную. Разработка и сайты на Tilda.
+</footer>
+</body>
+</html>
