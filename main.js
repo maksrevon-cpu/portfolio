@@ -1,20 +1,30 @@
-// ждём, пока всё загрузится
-document.addEventListener("DOMContentLoaded", function () {
-  const animated = document.querySelectorAll(".fade-in");
+// показать блоки при скролле
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".fade-in");
 
-  function showOnScroll() {
+  const showOnScroll = () => {
     const trigger = window.innerHeight * 0.9;
-
-    animated.forEach((el) => {
+    items.forEach((el) => {
       const top = el.getBoundingClientRect().top;
       if (top < trigger) {
         el.classList.add("show");
       }
     });
-  }
+  };
 
-  // показать то, что уже в зоне видимости
   showOnScroll();
-
   window.addEventListener("scroll", showOnScroll);
+
+  // плавная прокрутка по меню
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.getAttribute("href").substring(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
 });
